@@ -4,5 +4,6 @@ src
 webpack.config.js
 public
 build
+examples
 node_modules
 .github
