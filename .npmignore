@@ -1,8 +1,8 @@
 src
 .babelrc
 .gitignore
-webpack.config.json
-public/\b(?!lib\b)
+webpack.config.js
+public
 build
 node_modules
 .github

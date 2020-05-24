@@ -1,13 +1,12 @@
 {
   "name": "react-toast-component",
-  "version": "1.4.4",
-  "description": " 🍞 A lightweight React toast notification component.",
-  "main": "public/lib/Toast.js",
+  "version": "1.4.9",
+  "description": " 🍞 A lightweight react toast notification component. 11 kb ~",
+  "main": "lib/Toast.js",
   "types": "index.d.ts",
   "dependencies": {
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-icons": "^3.10.0"
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "react-redux": "^7.1.1",
