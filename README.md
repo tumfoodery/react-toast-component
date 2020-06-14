@@ -1,6 +1,6 @@
 # React Toast Component
 
-A lightweight react toast notification component.
+A lightweight react toast notification component. 11 kb ~
 
 <img src="https://sue.fyi/images/toast.png" width="400px" />
 
