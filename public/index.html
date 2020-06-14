@@ -2,42 +2,97 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="React Toast Component"
-    />
-    <link rel="apple-touch-icon" href="logo192.png" />
-    <link rel="manifest" href="manifest.json" />
+    <title>Standalone Example | React Toast Component</title>
+    <link rel="shortcut icon" href="favicon.ico" />
     <link
-      href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico&display=swap"
       rel="stylesheet"
     />
-    <title>React Toast Component</title>
+    <style>
+      html {
+        background: rgb(80, 204, 176);
+        font-family: "Pacifico", cursive;
+      }
+
+      body {
+        height: 100vh;
+        margin: 0;
+      }
+
+      #root {
+        padding-top: 100px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3em;
+        margin-top: 0;
+        margin-bottom: 100px;
+      }
+
+      button {
+        background: rgb(243, 186, 139);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border: 10px solid rgb(136, 93, 63);
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        font-family: "Indie Flower", cursive;
+        font-size: 14px;
+        height: 70px;
+        outline: none;
+        transition: box-shadow 0.3s ease;
+        width: 100px;
+      }
+
+      button:hover {
+        box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.6);
+      }
+
+      button:active {
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        right: 0;
+        width: 750px;
+        z-index: -1;
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="https://gist.github.com/sioanis/65dce11ab48909801589d36b2bc07821.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150346246-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-150346246-1');
-    </script>
-    <!-- Hotjar Tracking Code for http://toast.monster -->
-    <script>
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:1533513,hjsv:6};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
   </body>
+  <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="/lib/toast.js"></script>
+  <!-- <script src="../../lib/toast.js"></script> TO TEST IN DEV -->
+  <script type="text/babel">
+    function App() {
+      const [isOpen, setToast] = React.useState(false);
+      return (
+        <>
+          <h1>Standalone Example</h1>
+          <button onClick={() => setToast(true)}>Toast Me</button>
+          <img src="https://toast.monster/toast.jpg" loading="lazy" alt="..." />
+          <Toast
+            closeCallback={() => setToast(false)}
+            description="Dunc the Lunk, thick as a castle wall. Your action has been completed."
+            isOpen={isOpen}
+            title="App Notification 🍞"
+          />
+        </>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
 </html>
