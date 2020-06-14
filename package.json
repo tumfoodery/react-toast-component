@@ -1,6 +1,6 @@
 {
   "name": "react-toast-component",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": " 🍞 A lightweight react toast notification component. 11 kb ~",
   "main": "lib/Toast.js",
   "types": "index.d.ts",
