@@ -13,7 +13,12 @@ function App() {
     <>
       <h1>Toast Example</h1>
       <button onClick={() => setToast(true)}>Toast Me</button>
-      <img src="https://toast.monster/toast.jpg" loading="lazy" alt="..." />
+      <img
+        src="https://toast.monster/toast.jpg"
+        loading="lazy"
+        alt="..."
+        style={{ maxWidth: "100%" }}
+      />
       <Toast
         closeCallback={() => setToast(false)}
         description="Dunc the Lunk, thick as a castle wall. Your action has been completed."
