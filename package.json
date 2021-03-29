@@ -20,7 +20,7 @@
     "css-loader": "^4.3.0",
     "webpack": "4.44.2",
     "style-loader": "^1.2.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^4.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
